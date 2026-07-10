@@ -1,0 +1,41 @@
+/* esto es un comentario en css */
+
+body {
+    background-color: peru;
+}
+
+p {
+    color: blue;
+}
+
+h3 {
+    background-color: navy;
+    font-size: 50px;
+}
+
+h4 {
+    background-color: greenyellow;
+    font-size: 50px;
+}
+
+h5 {
+    background-color: silver;
+    font-size: 50px;
+}
+
+h6 {
+    background-color: aqua;
+    font-size: 50px;
+}
+
+#estado {
+    background-color: yellow;
+}
+
+.btn {
+    background-color: red;
+}
+
+.texto-resaltado {
+    color: blue;
+}

@@ -1,0 +1,37 @@
+/* 
+ font-family: "Montserrat", sans-serif;
+  font-family: "Fraunces", serif;
+*/
+
+body {
+    background-color: hsl(30, 38%, 92%);
+    
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+
+    display: flex;
+    justify-content: center; /* Ajustamiento horizontal */
+    align-items: center; /* Alineamiento vertical */
+    height: 100vh;
+}
+
+main {
+    border: 1px solid red;
+
+    width: 650px;
+
+    min-height: 400px;
+
+    display: flex;    /* ordenar elementos (uno al lado del otro) */
+}
+
+.photo {
+    width: 350px;
+
+    background-image: url(images/image-product-desktop.jpg);
+    background-size: cover;
+}
+
+.content {
+    width: 300px;
+}

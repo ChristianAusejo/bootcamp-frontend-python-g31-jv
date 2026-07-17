@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS: Flexbox</title>
+    <style>
+        .contenedor {
+            background-color: lightskyblue;
+
+            width: 300px;
+            height: 300px;
+
+            display: flex;
+            flex-direction: row; /* Valor por defecto */
+            /* flex-direction: column; */
+
+            gap: 60px;
+
+            justify-content: center;
+            justify-content: space-between; /* Automaticamente anula al gap, distribuye el espacio equitativamente */
+            /* justify-content: space-around; */
+
+            align-items: center;
+            align-items: end;
+            align-items: start;
+        }
+
+        .box {
+            background-color: lightcoral;
+
+            width: 50px;
+            height: 50px;
+
+            text-align: center;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <!-- div.box*3 Genera 3 div de clase "box" automaticamente --> 
+        <div class="box">A</div>
+        <div class="box">B</div>
+        <div class="box">C</div>
+    </div>
+</body>
+</html>

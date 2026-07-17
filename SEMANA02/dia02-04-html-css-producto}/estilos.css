@@ -16,13 +16,18 @@ body {
 }
 
 main {
-    border: 1px solid red;
+    /* border: 1px solid red; */
 
     width: 650px;
 
     min-height: 400px;
 
     display: flex;    /* ordenar elementos (uno al lado del otro) */
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
 }
 
 .photo {
@@ -33,5 +38,79 @@ main {
 }
 
 .content {
+    /* border: 3px solid blue; */
+
     width: 300px;
+
+    padding: 28px;
+
+    /* background-color: white; */
+    background-color: hsl(0, 0%, 100%);
+    
+}
+
+.content h2 {
+    color: red;
+
+    /* border: 1px solid green; */
+
+    margin: 0; /* Espaciado externo */
+
+    color: hsl(228, 12%, 48%);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 7px;
+    text-transform: uppercase;
+}
+
+.content h1 {
+    color: hsl(212, 21%, 14%);
+    font-family: "Fraunces", serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1;
+}
+
+.content p {
+    margin: 0;
+    color: hsl(228, 12%, 48%);
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.content div {
+    display: flex;
+    gap: 14px;
+}
+
+.content span {
+    font-family: "Fraunces",serif;
+    font-weight: 700;
+    font-size: 40px;
+    color: hsl(158, 36%, 37%);
+}
+
+.content s {
+    color: hsl(228, 12%, 48%);
+}
+
+.content button {
+    /* border: 1px solid red; */
+
+    border: none;
+    background-color: hsl(158, 36%, 37%);
+    color: white;
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+
+    padding: 14px;
+    width: 100%;
+    border-radius: 7px;
+
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+
+    margin-top: 21px;
 }

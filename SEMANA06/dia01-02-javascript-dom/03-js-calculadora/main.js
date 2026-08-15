@@ -24,8 +24,22 @@ buttons.forEach(function(button) {
             numeroActual = '0'
         } else if (buttonText === '=') {
             // TODO: Calcular las operaciones en base al número actual y operando
+            // 03. aquí realizamos las operaciones en base al número actual y el operando
+            if (operador === '+') {
+                numeroActual = Number(operando) + Number(numeroActual)
+            }
+            if (operador === '-') {
+                numeroActual = Number(operando) - Number(numeroActual)
+            }
+            if (operador === '*') {
+                numeroActual = Number(operando) * Number(numeroActual)
+            }
         } else if (buttonText === 'C') {
             // TODO: Limpiar el operando, operador y el input
+            // 04. Limpiamos operando, operador y el input
+            numeroActual = '0'
+            operador = ''
+            operando = ''
         } else {
          // 01. Se presionó algún número
             numeroActual = Number(numeroActual + buttonText)

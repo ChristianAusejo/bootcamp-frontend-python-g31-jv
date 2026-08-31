@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dragon Ball CRUD</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <header class="top-header">
+    <div class="header-info">
+      <h1>Dragon Ball CRUD</h1>
+      <p>Gestiona tus personajes de Dragon Ball 🟠</p>
+    </div>
+    <div class="header-counter">
+      <span id="total-count">0</span>
+      <small>PERSONAJES</small>
+    </div>
+  </header>
+
+  <main class="main-layout">
+    
+    <!-- Columna Izquierda: Formulario -->
+    <aside class="sidebar">
+      <div class="card">
+        <h3 id="form-title" class="orange-text">👤 NUEVO PERSONAJE</h3>
+        <form id="form-personaje">
+          <input type="hidden" id="char-id">
+
+          <label>Nombre</label>
+          <input type="text" id="char-name" placeholder="Ej: Goku" required>
+
+          <label>Imagen (URL)</label>
+          <input type="url" id="char-image" placeholder="https://dragonball-api.com/..." required>
+
+          <label>Raza</label>
+          <input type="text" id="char-race" placeholder="Ej: Saiyan" required>
+
+          <label>Género</label>
+          <select id="char-gender" required>
+            <option value="" disabled selected>Elegir</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Unknown">Unknown</option>
+          </select>
+
+          <button type="submit" id="btn-guardar" class="btn-orange">+ Agregar Personaje</button>
+          <button type="button" id="btn-cancelar" class="btn-cancel" style="display:none;">Cancelar</button>
+        </form>
+      </div>
+    </aside>
+
+    <!-- Columna Derecha: Lista de Personajes -->
+    <section class="content">
+      <div class="section-title">
+        <span>LISTA DE PERSONAJES</span>
+      </div>
+
+      <div id="loading" style="display:none; text-align:center; padding: 20px;">Cargando...</div>
+
+      <div id="contenedor-personajes" class="list-container"></div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Desarrollado por <strong>Christian Ausejo</strong></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

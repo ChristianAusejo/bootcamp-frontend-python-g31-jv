@@ -17,7 +17,7 @@ let listaPersonajesCache = [];
 let paginaActual = 1;
 const personajesPorPagina = 5;
 
-// 1. Cargar personajes al iniciar y limpiar duplicados de la API en segundo plano
+// 1. Cargar personajes al iniciar
 document.addEventListener('DOMContentLoaded', () => {
   obtenerPersonajes();
   limpiarDuplicadosAPI(); // Borra los duplicados de la APIBox
@@ -33,7 +33,7 @@ async function obtenerPersonajes() {
     loading.style.display = 'none';
 
     if (Array.isArray(personajes)) {
-      // FILTRADO DE DUPLICADOS EN INTERFAZ (Garantiza que no aparezcan repetidos en pantalla)
+
       const nombresVistos = new Set();
       const personajesUnicos = personajes.filter(personaje => {
         const nombreNormalizado = (personaje.name || '').trim().toLowerCase();

@@ -1,121 +1,183 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+// 01 - Componente base usando function
 
-function App() {
-  const [count, setCount] = useState(0)
+// function App() {
+//   return <h1>Hola React.js</h1>
+// }
 
+// const App = () => {
+//   return <h1>Hola React.js</h1>
+// }
+
+// ¿Qué es un componente?
+// * Es una función, devuelve JSX, todo componente en su nombre empieza con mayúscula
+
+// Partes de un componente:
+// 1. Imports (Si los hay)
+// 2. Lógica (variables, hooks, functions)
+// 3. Return -> JSX
+// 4. Export (Nos sirve para crear un módulo de ES)
+
+// Reglas básicas de un componente:
+// * Un solo elemente padre
+// * Es recomendable que la función tenga el mismo nombre del archivo. Ej. App.jsx -> App
+
+// 02 - Componente usando múltiples líneas
+
+// function App() {
+//   return (
+//     <div>
+//       <h1>React.js</h1>
+//       <p>Estamos aprendiendo sobre componentes.</p>
+//     </div>
+//   )
+// }
+
+// 03 - Componente usando Fragments (<></>)
+
+// function App() {
+//   return (
+//     <>
+//       <h1>React.js</h1>
+//       <p>Estamos aprendiendo sobre componentes.</p>
+//     </>
+//   )
+// }
+
+// 04 - Extensiones de VSCODE para usar con React.js
+// ES7+ React/Redux/React-Native snippets
+// https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets
+
+// Snippets para crear componentes (rfc, rafce)
+
+// snippet: rfc
+
+// function App() {
+//   return (
+//     <div>App</div>
+//   )
+// }
+
+// snippet: rafce
+
+// const App = () => {
+//   return (
+//     <div>App</div>
+//   )
+// }
+
+// 05 - Anidar componentes dentro de otros
+
+// function ComponenteSaludo() {
+//   return <h4>Hola a todos!</h4>
+// }
+
+// function ComponenteDespedida() {
+//   return <h4>Adios a todos!</h4>
+// }
+
+// const App = () => {
+//   return (
+//     <section>
+//       <h3>Componentes anidados</h3>
+
+//       <ComponenteSaludo />
+
+//       <ComponenteDespedida />
+//     </section>
+//   )
+// }
+
+
+// 06 - Importando componentes externos
+
+// import ComponenteSaludo from "./components/ComponenteSaludo"
+// import ComponenteDespedida from "./components/ComponenteDespedida.jsx"
+
+// // TODO: Crear el componente ComponenteDespedida en su propio archivo e importarlo en el componente App
+
+// const App = () => {
+//   return (
+//     <section>
+//       <h3>Componenentes externos</h3>
+
+//       <ComponenteSaludo />
+
+//       <ComponenteDespedida />
+//     </section>
+//   )
+// }
+
+// 07 - Usando expresiones con JSX -> "{}"
+
+// import nombreExportado, { frutas, curso } from "./modulo.js"
+
+// const App = () => {
+//   // Lógica del componente
+//   const suma = 8 + 9
+//   const nombre = 'Victor'
+
+//   // Comentario en React.js van dentro del cuerpo de la función
+//   /* Otro comentario multilínea dentro del cuerpo de la función */
+
+//   return (
+//     <section>
+//       <h1>Usando expresiones con jsx</h1>
+
+//       <p>{suma}</p>
+//       <p>{1 + 2 * 9 ** 2}</p>
+//       <p>{nombre}</p>
+
+//       <p>Hola {nombre}</p>
+//       <p>{`Hola ${nombre}`}</p>
+
+//       {/* Comentario en React.js dentro del JSX */}
+
+//       <p>{frutas}</p>
+//       <p>{nombreExportado}</p>
+//       <p>{JSON.stringify(curso)}</p>
+//       <p>{curso.nombre}</p>
+//       <p>{curso.nota}</p>
+//     </section>
+//   )
+// }
+
+// export default App
+
+// 09 - Propiedaes de un componente (Ahora el componente será reutilizable)
+
+//const BienvenidaPersonalizada = (props) => {
+//  return <h3>Hola {props.nombre}, tu edad es {props.edad ?? '0'} años.</h3>
+// }
+
+// const App = () => {
+//   return (
+//     <section>
+//       <h4>Propiedades de un componente</h4>
+// 
+//       <BienvenidaPersonalizada nombre="Christian" edad="29" />
+//       <BienvenidaPersonalizada nombre="Doki" edad="15" />
+//       <BienvenidaPersonalizada nombre="Sora" />
+//     </section>
+//   )
+// }
+
+// export default App
+
+// 10 - Propiedades de un componente (Con destructuring)
+
+const BienvenidaPersonalizada = ({ nombre, edad, color = 'rojo' }) => {
+  return <h3>Hola {nombre}, tu edad es {edad ?? '0'} años, y tu color favorito es el {color}</h3>
+}
+
+const App = () => {
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Hola Mundo</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <section>
+      <h4>Propiedades de un componente (Con destructuring)</h4>
 
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+      <BienvenidaPersonalizada nombre="Christian" edad="29" color="Azul" />
+      <BienvenidaPersonalizada nombre="Doki" edad="15" />
+      <BienvenidaPersonalizada nombre="Sora" />
+    </section>
   )
 }
 

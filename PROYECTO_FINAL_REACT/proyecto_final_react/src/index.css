@@ -1,0 +1,23 @@
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+/* Ajustes globales para inputs, textarea y selects en la página de creación */
+input, textarea, select {
+  font-family: inherit;
+  color: #0f172a;
+  background-color: #ffffff;
+}
+
+label {
+  color: #334155;
+  font-weight: 500;
+}
